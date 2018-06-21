@@ -9,7 +9,7 @@ export default ({ title, body, author }) => (
         <div>작성자: {author}</div>
         <div>{body}</div>
         <button onClick={value.goback}>뒤로가기</button>
-        <button>수정하기</button>
+        <button onClick={value.update}>수정하기</button>
         <button onClick={value.delete}>삭제하기</button>
       </div>
     )}

@@ -31,10 +31,6 @@ class PostProvider extends React.Component {
     window.history.back(-1);
   };
 
-  onUpdate = async (title, body) => {
-    
-  };
-
   onDelete = async () => {
     const { id } = this.props;
     await boardAPI.delete(`posts/${id}`);
@@ -48,6 +44,7 @@ class PostProvider extends React.Component {
       body: this.state.body,
       author: this.state.author,
       delete: this.onDelete,
+      update: this.goUpdate,
       goback: this.goBack
     };
     return <Provider value={value}>{this.props.children}</Provider>;

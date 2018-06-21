@@ -13,7 +13,7 @@ class App extends Component {
       <BrowserRouter>
         <UserProvider>
           <Route path="/login" component={LoginPage} />
-          <Route path="/posts/:id" component={PostPage} />
+          <Route exact path="/posts/:id" component={PostPage} />
           <Route path="/write" component={Write} />
           <Route exact path="/posts" component={PostListPage} />
           <Route exact path="/" component={Home} />

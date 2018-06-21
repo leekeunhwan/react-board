@@ -4,11 +4,17 @@ import boardAPI from "../boardAPI";
 
 class Write extends React.Component {
   titleRef = React.createRef();
-    bodyRef = React.createRef();
-    
-    handleWriteClick = () => {
-      
-  }  
+  bodyRef = React.createRef();
+
+  handleWriteClick = async e => {
+    const payload = {
+      title: this.titleRef.current.value,
+      body: this.bodyRef.current.value
+    };
+    e.preventDefault();
+    const res = await boardAPI.post(`posts`, payload);
+    window.location.replace("/");
+  };
 
   render() {
     return (
@@ -35,7 +41,8 @@ class Write extends React.Component {
               required
             />
           </p>
-                <button onClick={}>작성하기</button>
+          <button onClick={e => window.location.replace("/")}>뒤로 가기</button>
+          <button onClick={this.handleWriteClick}>작성하기</button>
         </form>
       </React.Fragment>
     );
