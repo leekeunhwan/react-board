@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./App.css";
-import { UserProvider } from "./contexts/UserContext";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
-import Write from "./components/Write";
-import PostPage from "./pages/PostPage";
-import PostListPage from "./pages/PostListPage";
-import LoginPage from "./pages/LoginPage";
+import React, { Component } from 'react';
+import './App.css';
+import { UserProvider } from './contexts/UserContext';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import Write from './components/Write';
+import PostPage from './pages/PostPage';
+import PostListPage from './pages/PostListPage';
+import LoginPage from './pages/LoginPage';
 
 class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
 }
 
 const Home = () =>
-  localStorage.getItem("token") ? (
+  localStorage.getItem('token') ? (
     <Redirect to="posts" />
   ) : (
     <Redirect to="login" />

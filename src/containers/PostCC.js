@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { PostConsumer } from "../contexts/PostContext";
-import Post from "../components/Post";
+import { PostConsumer } from '../contexts/PostContext';
+import Post from '../components/Post';
 
 export default class PostCC extends React.Component {
   render() {

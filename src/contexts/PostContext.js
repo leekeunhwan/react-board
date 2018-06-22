@@ -1,5 +1,5 @@
-import React from "react";
-import boardAPI from "../boardAPI";
+import React from 'react';
+import boardAPI from '../boardAPI';
 
 const { Provider, Consumer } = React.createContext();
 
@@ -8,7 +8,7 @@ class PostProvider extends React.Component {
     loading: false,
     title: null,
     body: null,
-    author: null
+    author: null,
   };
   async componentDidMount() {
     this.setState({ loading: true });
@@ -18,11 +18,11 @@ class PostProvider extends React.Component {
       this.setState({
         title: res.data.title,
         body: res.data.body,
-        author: res.data.user.username
+        author: res.data.user.username,
       });
     } finally {
       this.setState({
-        loading: false
+        loading: false,
       });
     }
   }
@@ -45,7 +45,7 @@ class PostProvider extends React.Component {
       author: this.state.author,
       delete: this.onDelete,
       update: this.goUpdate,
-      goback: this.goBack
+      goback: this.goBack,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

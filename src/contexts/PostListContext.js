@@ -1,12 +1,12 @@
-import React from "react";
-import boardAPI from "../boardAPI";
+import React from 'react';
+import boardAPI from '../boardAPI';
 
 const { Provider, Consumer } = React.createContext();
 
 class PostListProvider extends React.Component {
   state = {
     loading: false,
-    posts: []
+    posts: [],
   };
   async componentDidMount() {
     this.setState({ loading: true });
@@ -16,12 +16,12 @@ class PostListProvider extends React.Component {
         posts: res.data.map(post => ({
           id: post.id,
           title: post.title,
-          author: post.user.username
-        }))
+          author: post.user.username,
+        })),
       });
     } finally {
       this.setState({
-        loading: false
+        loading: false,
       });
     }
   }
@@ -29,7 +29,7 @@ class PostListProvider extends React.Component {
   render() {
     const value = {
       loading: this.state.loading,
-      posts: this.state.posts
+      posts: this.state.posts,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

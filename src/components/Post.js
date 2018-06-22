@@ -1,5 +1,5 @@
-import React from "react";
-import { PostConsumer } from "../contexts/PostContext";
+import React from 'react';
+import { PostConsumer } from '../contexts/PostContext';
 
 export default ({ title, body, author }) => (
   <PostConsumer>

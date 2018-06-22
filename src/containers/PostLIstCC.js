@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { Redirect } from "react-router-dom";
-import { PostListConsumer } from "../contexts/PostListContext";
-import PostListItem from "../components/PostListItem";
-import { UserConsumer } from "../contexts/UserContext";
-import withAuth from "../hocs/withAuth";
+import { Redirect } from 'react-router-dom';
+import { PostListConsumer } from '../contexts/PostListContext';
+import PostListItem from '../components/PostListItem';
+import { UserConsumer } from '../contexts/UserContext';
+import withAuth from '../hocs/withAuth';
 
 class PostListCC extends React.Component {
   goWrite = () => {
-    window.location.replace("/write");
+    window.location.replace('/write');
   };
   render() {
     return (
@@ -33,4 +33,4 @@ class PostListCC extends React.Component {
   }
 }
 
-export default withAuth("/login")(PostListCC);
+export default withAuth('/login')(PostListCC);
